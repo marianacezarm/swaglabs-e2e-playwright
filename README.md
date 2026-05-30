@@ -76,6 +76,3 @@ The focus is to keep:
 * test reliability
 
 without introducing unnecessary complexity.
-
-```
-```
