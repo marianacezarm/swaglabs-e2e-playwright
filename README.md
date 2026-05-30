@@ -1,4 +1,3 @@
-````markdown
 # SwagLabs E2E Automation - Playwright
 
 End-to-end test automation project using Playwright and TypeScript.
