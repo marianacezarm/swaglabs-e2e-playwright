@@ -36,6 +36,23 @@ This project was created to practice modern test automation concepts using Playw
 
 ---
 
+## 🌐 Application Under Test
+
+This project uses the following application for automation practice and E2E testing:
+
+- Sauce Demo (Swag Labs)
+- https://www.saucedemo.com/
+
+The application provides a simple e-commerce flow that is excellent for practicing:
+- login automation
+- UI validations
+- cart flows
+- checkout scenarios
+- end-to-end testing concepts
+
+
+--- 
+
 ## ▶️ Running the Tests
 
 Install dependencies:
