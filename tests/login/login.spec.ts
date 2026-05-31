@@ -15,7 +15,7 @@ test.describe('User login', () => {
         })
     })
 
-    test.describe('Negative scenarios', () => {
+    test.describe('Authentication failures', () => {
         const invalidUsers = UserPayload.invalidUsers()
 
         invalidUsers.forEach((user) => {
@@ -27,6 +27,17 @@ test.describe('User login', () => {
 
                 await loginPage.assertErrorMessage(LoginErrors.INVALID_CREDENTIALS)
             })
+        })
+
+        test('Should not login with locked out user', async({ loginPage }) => {
+
+            const user = UserPayload.lockedOutUser()
+
+            await loginPage.goto()
+
+            await loginPage.login(user.username, user.password)
+
+            await loginPage.assertErrorMessage(LoginErrors.LOCKED_OUT)
         })
     })
 })
