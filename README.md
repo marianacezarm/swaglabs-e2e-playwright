@@ -26,10 +26,12 @@ The project focuses on:
 ```text
 .
 ├── constants/
+├── fixtures/
 ├── pages/
 ├── payloads/
 ├── tests/
 │   └── login/
+│   └── inventory/
 └── README.md
 ```
 
@@ -43,36 +45,60 @@ Contains page objects, locators, actions and assertions.
 
 Reusable test data and user credentials.
 
+### `fixtures/`
+
+Custom Playwright fixtures used to inject page objects into tests.
+
 ### `constants/`
 
 Shared constants such as error messages.
 
 ### `tests/`
 
-Test scenarios and specs.
+Test scenarios and specs organized by feature/domain.
 
 ---
 
 # Implemented Scenarios
 
-## Positive Scenarios
+## Login
+
+### Positive Scenarios
 
 - Successful login with standard user
+- Performance glitch user login
 
-## Negative Scenarios
+### Negative Scenarios
 
 - Invalid username
 - Invalid password
 - Invalid username and password
+- Locked out user
+
+---
+
+# Inventory
+
+### Inventory Validation
+
+- Inventory list visibility
+- Inventory item structure validation
+- Image visibility validation
+- Product title validation
+- Product description validation
+- Product price validation
 
 ---
 
 # Features Implemented
 
 - Page Object Model (POM)
+- Custom Playwright fixtures
 - Data-driven tests
 - Shared error message constants
 - Reusable payload factories
+- Nested locators
+- UI integrity validation
 - Prettier formatting
 - TypeScript support
 
@@ -133,7 +159,7 @@ npx prettier . --write
 Examples:
 
 ```text
-feat: add negative login scenarios
+feat: add login tests
 refactor: improve login error assertions
 docs: update README
 chore: configure prettier
