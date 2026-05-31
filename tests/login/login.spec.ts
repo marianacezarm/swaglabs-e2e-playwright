@@ -1,12 +1,11 @@
-import { test } from '@playwright/test'
+import { test } from '../../fixtures/base-test'
 import { LoginPage } from '../../pages/LoginPage'
 import { UserPayload } from '../../payloads/user.payload'
 import { LoginErrors } from '../../constants/login-errors'
 
 test.describe('User login', () => {
     test.describe('Happy Path', () => {
-        test('Should login with standard user', async ({ page }) => {
-            const loginPage = new LoginPage(page)
+        test('Should login with standard user', async ({ loginPage }) => {
             const user = UserPayload.standardUser()
 
             await loginPage.goto()
@@ -20,8 +19,7 @@ test.describe('User login', () => {
         const invalidUsers = UserPayload.invalidUsers()
 
         invalidUsers.forEach((user) => {
-            test(`Should not login with ${user.testName}`, async ({ page }) => {
-                const loginPage = new LoginPage(page)
+            test(`Should not login with ${user.testName}`, async ({ loginPage }) => {
 
                 await loginPage.goto()
 
