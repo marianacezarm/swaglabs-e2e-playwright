@@ -20,7 +20,7 @@ pages/      # Page Object Models
 fixtures/   # Test data
 utils/      # Helpers and utilities
 types/      # TypeScript types
-````
+```
 
 ---
 
@@ -28,11 +28,11 @@ types/      # TypeScript types
 
 This project was created to practice modern test automation concepts using Playwright, focusing on:
 
-* End-to-end testing
-* Page Object Model (POM)
-* Maintainable test architecture
-* Readable and scalable tests
-* QA best practices
+- End-to-end testing
+- Page Object Model (POM)
+- Maintainable test architecture
+- Readable and scalable tests
+- QA best practices
 
 ---
 
@@ -44,14 +44,14 @@ This project uses the following application for automation practice and E2E test
 - https://www.saucedemo.com/
 
 The application provides a simple e-commerce flow that is excellent for practicing:
+
 - login automation
 - UI validations
 - cart flows
 - checkout scenarios
 - end-to-end testing concepts
 
-
---- 
+---
 
 ## ▶️ Running the Tests
 
@@ -87,9 +87,9 @@ This project follows a simple and maintainable structure using the Page Object M
 
 The focus is to keep:
 
-* readability
-* separation of responsibilities
-* scalability
-* test reliability
+- readability
+- separation of responsibilities
+- scalability
+- test reliability
 
 without introducing unnecessary complexity.
