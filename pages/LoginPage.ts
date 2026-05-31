@@ -33,7 +33,6 @@ export class LoginPage extends BasePage {
     }
 
     async assertErrorMessage(message: string) {
-        await expect(this.errorMessage)
-            .toContainText(message)
+        await expect(this.errorMessage).toContainText(message)
     }
 }

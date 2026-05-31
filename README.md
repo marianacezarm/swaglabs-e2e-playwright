@@ -3,6 +3,7 @@
 Small automation project created to practice modern E2E test automation using Playwright and TypeScript.
 
 The project focuses on:
+
 - clean test organization
 - Page Object Model (POM)
 - reusable test data
@@ -35,15 +36,19 @@ The project focuses on:
 ## Folder Overview
 
 ### `pages/`
+
 Contains page objects, locators, actions and assertions.
 
 ### `payloads/`
+
 Reusable test data and user credentials.
 
 ### `constants/`
+
 Shared constants such as error messages.
 
 ### `tests/`
+
 Test scenarios and specs.
 
 ---

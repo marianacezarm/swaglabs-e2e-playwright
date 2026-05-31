@@ -65,6 +65,19 @@ export class UserPayload {
         }
     }
 
+    static validUsers() {
+        return [
+            {
+                testName: 'standard user',
+                ...this.standardUser(),
+            },
+            {
+                testName: 'performance glitch user',
+                ...this.performanceGlitchUser(),
+            },
+        ]
+    }
+
     static invalidUsers() {
         return [
             {
