@@ -1,95 +1,142 @@
-# SwagLabs E2E Automation - Playwright
+# Swag Labs E2E Tests
 
-End-to-end test automation project using Playwright and TypeScript.
+Small automation project created to practice modern E2E test automation using Playwright and TypeScript.
+
+The project focuses on:
+- clean test organization
+- Page Object Model (POM)
+- reusable test data
+- positive and negative scenarios
+- maintainable automation structure
 
 ---
 
-## 🚀 Tech Stack
+# Stack
 
 - Playwright
 - TypeScript
 - Node.js
+- Prettier
 
 ---
 
-## 📂 Project Structure
+# Project Structure
 
-```bash
-tests/      # Test scenarios
-pages/      # Page Object Models
-fixtures/   # Test data
-utils/      # Helpers and utilities
-types/      # TypeScript types
+```text
+.
+├── constants/
+├── pages/
+├── payloads/
+├── tests/
+│   └── login/
+└── README.md
 ```
 
+## Folder Overview
+
+### `pages/`
+Contains page objects, locators, actions and assertions.
+
+### `payloads/`
+Reusable test data and user credentials.
+
+### `constants/`
+Shared constants such as error messages.
+
+### `tests/`
+Test scenarios and specs.
+
 ---
 
-## 🎯 Project Goal
+# Implemented Scenarios
 
-This project was created to practice modern test automation concepts using Playwright, focusing on:
+## Positive Scenarios
 
-- End-to-end testing
+- Successful login with standard user
+
+## Negative Scenarios
+
+- Invalid username
+- Invalid password
+- Invalid username and password
+
+---
+
+# Features Implemented
+
 - Page Object Model (POM)
-- Maintainable test architecture
-- Readable and scalable tests
-- QA best practices
+- Data-driven tests
+- Shared error message constants
+- Reusable payload factories
+- Prettier formatting
+- TypeScript support
 
 ---
 
-## 🌐 Application Under Test
+# Running the Project
 
-This project uses the following application for automation practice and E2E testing:
-
-- Sauce Demo (Swag Labs)
-- https://www.saucedemo.com/
-
-The application provides a simple e-commerce flow that is excellent for practicing:
-
-- login automation
-- UI validations
-- cart flows
-- checkout scenarios
-- end-to-end testing concepts
-
----
-
-## ▶️ Running the Tests
-
-Install dependencies:
+## Install dependencies
 
 ```bash
 npm install
 ```
 
-Run tests:
+## Run all tests
 
 ```bash
-npm run test
+npx playwright test
 ```
 
-Run tests with UI mode:
+## Run tests with browser visible
 
 ```bash
-npm run test:ui
+npx playwright test --headed
 ```
 
-Open HTML report:
+## Run a specific test file
 
 ```bash
-npm run report
+npx playwright test tests/login/login.spec.ts
+```
+
+## Run tests by name
+
+```bash
+npx playwright test -g "invalid username"
+```
+
+## Open Playwright UI mode
+
+```bash
+npx playwright test --ui
 ```
 
 ---
 
-## 🧠 Architecture Decisions
+# Formatting
 
-This project follows a simple and maintainable structure using the Page Object Model pattern.
+Format the project with Prettier:
 
-The focus is to keep:
+```bash
+npx prettier . --write
+```
 
-- readability
-- separation of responsibilities
-- scalability
-- test reliability
+---
 
-without introducing unnecessary complexity.
+# Commit Convention
+
+Examples:
+
+```text
+feat: add negative login scenarios
+refactor: improve login error assertions
+docs: update README
+chore: configure prettier
+```
+
+---
+
+# Application Under Test
+
+Swag Labs:
+https://www.saucedemo.com/
