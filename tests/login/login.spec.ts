@@ -1,6 +1,7 @@
 import { test } from '@playwright/test'
 import { LoginPage } from '../../pages/LoginPage'
 import { UserPayload } from '../../payloads/user.payload'
+import { LoginErrors } from '../../constants/login-errors'
 
 test.describe('User login', () => {
     test.describe('Happy Path', () => {
@@ -26,7 +27,7 @@ test.describe('User login', () => {
 
                 await loginPage.login(user.username, user.password)
 
-                await loginPage.assertInvalidCredentials()
+                await loginPage.assertErrorMessage(LoginErrors.INVALID_CREDENTIALS)
             })
         })
     })

@@ -14,8 +14,8 @@ export class LoginPage extends BasePage {
         return this.page.getByTestId('login-button')
     }
 
-    private get invalidCredentialsMessage() {
-        return this.page.getByText('Username and password do not match')
+    private get errorMessage() {
+        return this.page.getByTestId('error')
     }
 
     goto() {
@@ -32,7 +32,8 @@ export class LoginPage extends BasePage {
         await expect(this.page).toHaveURL(/inventory/)
     }
 
-    async assertInvalidCredentials() {
-        await expect(this.invalidCredentialsMessage).toBeVisible()
+    async assertErrorMessage(message: string) {
+        await expect(this.errorMessage)
+            .toContainText(message)
     }
 }
