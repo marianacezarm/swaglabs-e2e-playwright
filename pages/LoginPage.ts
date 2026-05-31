@@ -35,4 +35,21 @@ export class LoginPage extends BasePage {
     async assertErrorMessage(message: string) {
         await expect(this.errorMessage).toContainText(message)
     }
+
+    async loginAs(
+        user: {
+            username: string
+            password: string
+        }
+    ) {
+
+        await this.goto()
+
+        await this.login(
+            user.username,
+            user.password
+        )
+
+    }
+
 }
